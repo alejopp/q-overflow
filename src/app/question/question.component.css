@@ -1,0 +1,43 @@
+html{
+  font-size: 62.5%;
+}
+
+.icon {
+    font-size: 4rem;
+  }
+  
+  h2 {
+    margin: 0;
+  }
+
+  .answers {
+    padding: 0.15rem;
+    margin-left: 0.2rem;
+  }
+  
+  .answers-list {
+    padding: 0;
+    list-style-type: none;
+  }
+  h3{
+    font-size: 1.6rem;
+    font-weight: bold;
+  }
+  h5 {
+    margin-bottom: 0;
+    font-size: 1.3rem;
+    font-weight: bold;
+  }
+  
+  h5 small {
+    font-weight: normal;
+    font-size: smaller;
+    color: rgba(0, 0, 0, .54);
+  }
+  
+  .description {
+    padding-left: 0.6rem;
+    border-left: 0.2rem solid rgb(209, 206, 206);
+    font-size: 1.2rem;
+    margin-top: 0.6rem;
+  }

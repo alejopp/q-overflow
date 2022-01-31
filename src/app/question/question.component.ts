@@ -1,4 +1,6 @@
+import { getLocaleEraNames } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { Question } from './question.model'
 
 @Component({
   selector: 'app-question',
@@ -7,7 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class QuestionComponent implements OnInit {
 
-  constructor() { }
+  question:Question = new Question(
+    'Android Question',
+    'blablbaablablababalbablabaalbabalbbalbaablb',
+    new Date,
+    'devicon-android-plain colored'
+
+  );
+  
+  constructor() {}
 
   ngOnInit(): void {
   }

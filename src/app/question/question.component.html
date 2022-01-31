@@ -1,1 +1,55 @@
-<p>New Question</p>
+<!-------------QUESTIONS--------------------------------------------------->
+<mat-card>
+    <mat-card-header>
+        <div mat-card-avatar>
+            <i mat-list-icon class="{{question.icon}} icon"></i>
+        </div>
+        <mat-card-title>
+            <h2>{{question.title}}</h2>
+        </mat-card-title>
+        <mat-card-subtitle>
+            <small>Conan Edowaga - {{ question.createdAt | amTimeAgo }} </small>
+        </mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+      <p>{{question.description}}</p>
+    </mat-card-content>
+
+  </mat-card>
+
+<!------------------ANSWERS---------------------------------------------------->
+  <div class="answers">
+    <h3>Answers</h3>
+    <ul class="answers-list">
+      <li>
+        <h5>
+         Benito Cámelas
+          <small>A few seconds ago</small>
+        </h5>
+        <p class="description">
+          I have the answer!
+        </p>
+      </li>
+      <li>
+        <h5>
+         Benito Cámelas
+          <small>A few seconds ago</small>
+        </h5>
+        <p class="description">
+          I have the answer!
+        </p>
+      </li>
+      <li>
+        <h5>
+         Benito Cámelas
+          <small>A few seconds ago</small>
+        </h5>
+        <p class="description">
+          I have the answer!
+        </p>
+      </li>
+    </ul>
+  </div>
+
+ 
