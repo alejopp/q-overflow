@@ -1,4 +1,3 @@
-import { getLocaleEraNames } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Question } from './question.model'
 
@@ -14,7 +13,6 @@ export class QuestionComponent implements OnInit {
     'blablbaablablababalbablabaalbabalbbalbaablb',
     new Date,
     'devicon-android-plain colored'
-
   );
   
   constructor() {}

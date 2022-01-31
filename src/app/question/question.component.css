@@ -18,6 +18,7 @@ html{
   .answers-list {
     padding: 0;
     list-style-type: none;
+    padding-bottom: 16rem;
   }
   h3{
     font-size: 1.6rem;
@@ -40,4 +41,14 @@ html{
     border-left: 0.2rem solid rgb(209, 206, 206);
     font-size: 1.2rem;
     margin-top: 0.6rem;
+  }
+
+  .answer-form {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 2;
+    background-color: white;
+    border-top: 0.1 rem solid #dcdcdc;
   }
