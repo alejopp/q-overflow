@@ -12,9 +12,11 @@ export class QuestionComponent implements OnInit {
     'Android Question',
     'blablbaablablababalbablabaalbabalbbalbaablb',
     new Date,
-    'devicon-android-plain colored'
+    'devicon-android-plain colored',
   );
   
+ 
+
   constructor() {}
 
   ngOnInit(): void {

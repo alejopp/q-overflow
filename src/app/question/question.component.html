@@ -21,65 +21,25 @@
 <!------------------ANSWERS---------------------------------------------------->
   <div class="answers">
     <h3>Answers</h3>
-    <ul class="answers-list" *ngIf="question.answers.length > 0">  
-      <li>
+    <ul class="answers-list" *ngIf="question.answers.length > 0">
+      <li *ngFor="let answer of question.answers">
         <h5>
-         Benito Cámelas
-          <small>A few seconds ago</small>
+          {{answer.user?.firstName}} {{answer.user?.lastName}} 
+          <small>
+            {{answer.createdAt | amTimeAgo}}
+          </small>
         </h5>
         <p class="description">
-          I have the answer!
+          {{answer.description}}
         </p>
-      </li>
-      <li>
-        <h5>
-         Benito Cámelas
-          <small>A few seconds ago</small>
-        </h5>
-        <p class="description">
-          I have the answer!
-        </p>
-      </li>
-      <li>
-        <h5>
-         Benito Cámelas
-          <small>A few seconds ago</small>
-        </h5>
-        <p class="description">
-          I have the answer!
-        </p>
-      </li>
-      <li>
-        <h5>
-         Benito Cámelas
-          <small>A few seconds ago</small>
-        </h5>
-        <p class="description">
-          I have the answer!
-        </p>
-      </li>
-      <li>
-        <h5>
-         Benito Cámelas
-          <small>A few seconds ago</small>
-        </h5>
-        <p class="description">
-          I have the answer!
-        </p>
-      </li>
-      <li>
-        <h5>
-         Benito Cámelas
-          <small>A few seconds ago</small>
-        </h5>
-        <p class="description">
-          I have the answer!
-        </p>
-      </li>
+        
+       
+      </li>  
     </ul>
     <p *ngIf = "question.answers.length === 0"> Be the first in comment</p>
+    <app-answer [question]="question" class="answer-form"></app-answer>
   </div>
 
-  <app-answer class="answer-form"></app-answer>
+  
 
  

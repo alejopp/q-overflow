@@ -7,6 +7,7 @@ import { FormsModule }   from '@angular/forms';
 import { QuestionComponent } from './question/question.component';
 import { MomentModule } from 'ngx-moment';
 import { AnswerComponent } from './answer/answer.component';
+import { SignScreenComponent } from './auth/sign-screen/sign-screen.component';
 
 
 @NgModule({
@@ -14,6 +15,7 @@ import { AnswerComponent } from './answer/answer.component';
     AppComponent,
     QuestionComponent,
     AnswerComponent,
+    SignScreenComponent,
   ],
   imports: [
     BrowserModule,
