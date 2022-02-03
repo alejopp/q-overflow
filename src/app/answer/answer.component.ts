@@ -18,7 +18,7 @@ export class AnswerComponent implements OnInit {
  
 
   onSubmit(form: NgForm) {
-    const answer = new Answer(form.value.description,this.question,new Date, new User('Conan','Edogawa'));
+    const answer = new Answer(form.value.description,this.question,new Date, new User('','','Naruto','Uzumaqui'));
     this.question.answers.unshift(answer);
     form.reset();
   }
