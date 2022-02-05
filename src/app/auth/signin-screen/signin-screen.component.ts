@@ -3,15 +3,14 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { User } from '../user.model';
 
 @Component({
-  selector: 'app-sign-screen',
-  templateUrl: './sign-screen.component.html',
-  styleUrls: ['./sign-screen.component.css']
+  selector: 'app-signin-screen',
+  templateUrl: './signin-screen.component.html',
+  styleUrls: ['./signin-screen.component.css']
 })
-export class SignScreenComponent implements OnInit {
+export class SignInScreenComponent implements OnInit {
 
   signInForm!: FormGroup;
   email = new FormControl('', [Validators.required, Validators.email]);
-
   constructor() { }
 
   ngOnInit(): void {
