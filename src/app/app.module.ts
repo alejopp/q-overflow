@@ -9,6 +9,7 @@ import { QuestionComponent } from './question/question.component';
 import { MomentModule } from 'ngx-moment';
 import { AnswerComponent } from './answer/answer.component';
 import { SignInScreenComponent } from './auth/signin-screen/signin-screen.component';
+import { QuestionListComponent } from './question-list/question-list.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { SignInScreenComponent } from './auth/signin-screen/signin-screen.compon
     QuestionComponent,
     AnswerComponent,
     SignInScreenComponent,
-    SignUpScreenComponent
+    SignUpScreenComponent,
+    QuestionListComponent
   ],
   imports: [
     BrowserModule,
