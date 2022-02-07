@@ -1,3 +1,5 @@
+import { QuestionListComponent } from './question/question-list.component';
+import { QuestionFormComponent } from './question/question-form.component';
 import { SignUpScreenComponent } from './auth/signup-screen/signup-screen.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -9,8 +11,7 @@ import { QuestionComponent } from './question/question.component';
 import { MomentModule } from 'ngx-moment';
 import { AnswerComponent } from './answer/answer.component';
 import { SignInScreenComponent } from './auth/signin-screen/signin-screen.component';
-import { QuestionListComponent } from './question-list/question-list.component';
-import { QuestionFormComponent } from './question-form/question-form.component';
+
 
 
 @NgModule({
@@ -20,8 +21,8 @@ import { QuestionFormComponent } from './question-form/question-form.component';
     AnswerComponent,
     SignInScreenComponent,
     SignUpScreenComponent,
-    QuestionListComponent,
-    QuestionFormComponent
+    QuestionFormComponent,
+    QuestionListComponent
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,4 @@
-import { Question } from './../question/question.model';
+import { Question } from './question.model';
 import { Component, OnInit } from '@angular/core';
 
 const q = new Question(
@@ -11,7 +11,6 @@ const q = new Question(
 @Component({
   selector: 'app-question-list',
   templateUrl: './question-list.component.html',
-  styleUrls: ['./question-list.component.css']
 })
 export class QuestionListComponent implements OnInit {
 
