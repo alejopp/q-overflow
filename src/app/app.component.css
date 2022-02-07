@@ -1,6 +1,17 @@
 .example-icon {
     padding: 0 14px;
   }
+
   .space {
     flex: 1 1 auto;
   }
+
+  [ng-reflect-router-link] {
+    cursor: pointer;
+  }
+  
+  [ng-reflect-router-link]:focus {
+    outline: 0 ;
+  }
+
+

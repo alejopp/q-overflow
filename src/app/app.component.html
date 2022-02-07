@@ -1,14 +1,11 @@
 <mat-toolbar color="primary">
 
-    <span>Q-Overflow</span>
+    <span [routerLink]="'/'">Q-Overflow</span>
     <span class="space"></span>
-    <span class="material-icons">
+    <span [routerLink]="'/signin'"  class = "material-icons">
       account_circle
     </span>
 </mat-toolbar>
 
- <!-- <app-question></app-question> -->
-<!-- <app-sign-screen></app-sign-screen> -->
-<!-- <app-signup-screen></app-signup-screen> -->
-<!-- <app-question-list></app-question-list> -->
-<app-question-form></app-question-form>
+<router-outlet></router-outlet>
+

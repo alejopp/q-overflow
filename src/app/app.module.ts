@@ -3,7 +3,6 @@ import { QuestionFormComponent } from './question/question-form.component';
 import { SignUpScreenComponent } from './auth/signup-screen/signup-screen.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MaterialModule } from './material.module';
 import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
@@ -11,6 +10,7 @@ import { QuestionComponent } from './question/question.component';
 import { MomentModule } from 'ngx-moment';
 import { AnswerComponent } from './answer/answer.component';
 import { SignInScreenComponent } from './auth/signin-screen/signin-screen.component';
+import { Routing } from './app-routing.module'
 
 
 
@@ -26,11 +26,11 @@ import { SignInScreenComponent } from './auth/signin-screen/signin-screen.compon
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     MaterialModule,
     MomentModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    Routing
   ],
   providers: [],
   bootstrap: [AppComponent]

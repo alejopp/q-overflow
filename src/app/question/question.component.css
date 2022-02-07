@@ -52,3 +52,11 @@ html{
     background-color: white;
     border-top: 0.1rem solid #bebdbd;
   }
+
+  [ng-reflect-router-link] {
+    cursor: pointer;
+  }
+  
+  [ng-reflect-router-link]:focus {
+    outline: 0 ;
+  }
