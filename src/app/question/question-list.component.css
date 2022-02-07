@@ -1,0 +1,14 @@
+[ng-reflect-router-link] {
+    cursor: pointer;
+  }
+  
+  [ng-reflect-router-link]:focus {
+    outline: 0 ;
+  }
+
+   .add-question {
+    position: fixed;
+    bottom: 3rem;
+    right: 3rem;
+
+  } 
