@@ -1,27 +1,34 @@
 import { Injectable } from '@angular/core';
 import { Question } from './question.model';
-import { Http } from '@angular/http';
 import { environment } from '../../environments/environment';
 import urljoin from 'url-join';
-import 'rxjs/add/operator/toPromise';
+
+
+import { HttpClient } from '@angular/common/http';
 
 @Injectable()
 export class QuestionService {
 
   private questionsUrl: string;
 
-  constructor(private http: Http) {
+  constructor(private http: HttpClient) {
     this.questionsUrl = urljoin(environment.apiUrl, 'questions');
   }
 
-  getQuestions(): Promise<void | Question[]> {
-    return this.http.get(this.questionsUrl)
-              .toPromise()
-              .then(response => response.json() as Question[])
-              .catch(this.handleError);
+  getQuestions() {
+    return this.http.get<Question[]>(this.questionsUrl);
   }
 
-  handleError() {
+  getQuestion(id:string){
+    const url = urljoin(this.questionsUrl,id);
+    return this.http.get<Question>(url);
+  }
 
+
+  handleError(error: any) {
+    const errMsg = error.message ? error.message :
+      error.status ? `${error.status} - ${error.statusText}` : 'Server error';
+    console.log(errMsg);
   }
 }
+

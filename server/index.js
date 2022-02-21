@@ -1,9 +1,8 @@
-import  http from 'http'
-import Debug from 'debug'
-import app from './app'
+import Debug from 'debug';
+import app from './app';
 
-const PORT = 3001
-const debug = new Debug('q-overflow:root')
+const PORT = 3001;
+const debug = new Debug('q-overflow:root');
 
 
 

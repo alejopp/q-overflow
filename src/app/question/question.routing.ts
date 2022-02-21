@@ -4,6 +4,6 @@ import { QuestionComponent } from './question.component';
 
 export const QUESTION_ROUTES = [
   { path: '', component: QuestionListComponent },
-  { path: ':new', component: QuestionFormComponent },
+  { path: 'new', component: QuestionFormComponent },
   { path: ':id', component: QuestionComponent }
 ];

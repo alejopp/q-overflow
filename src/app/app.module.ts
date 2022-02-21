@@ -10,7 +10,8 @@ import { QuestionComponent } from './question/question.component';
 import { MomentModule } from 'ngx-moment';
 import { AnswerComponent } from './answer/answer.component';
 import { SignInScreenComponent } from './auth/signin-screen/signin-screen.component';
-import { Routing } from './app-routing.module'
+import { Routing } from './app-routing.module';
+import { HttpClientModule} from '@angular/common/http';
 
 
 
@@ -30,7 +31,8 @@ import { Routing } from './app-routing.module'
     MomentModule,
     FormsModule,
     ReactiveFormsModule,
-    Routing
+    Routing,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

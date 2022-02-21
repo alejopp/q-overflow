@@ -1,45 +1,53 @@
+<div class="align-center">
+  <mat-spinner *ngIf="loading"></mat-spinner>
+</div>
+
+
+<div *ngIf="!loading">
 <!-------------QUESTIONS--------------------------------------------------->
 <mat-card>
-    <mat-card-header>
-        <div mat-card-avatar>
-            <i mat-list-icon class="{{question.icon}} icon"></i>
-        </div>
-        <mat-card-title>
-            <h2>{{question.title}}</h2>
-        </mat-card-title>
-        <mat-card-subtitle>
-            <small>Conan Edowaga - {{ question.createdAt | amTimeAgo }} </small>
-        </mat-card-subtitle>
-    </mat-card-header>
+  <mat-card-header>
+      <div mat-card-avatar>
+          <i mat-list-icon class="{{question.icon}} icon"></i>
+      </div>
+      <mat-card-title>
+          <h2>{{question.title}}</h2>
+      </mat-card-title>
+      <mat-card-subtitle>
+          <small>Conan Edowaga - {{ question.createdAt | amTimeAgo }} </small>
+      </mat-card-subtitle>
+  </mat-card-header>
 
-    <mat-card-content>
-      <p>{{question.description}}</p>
-    </mat-card-content>
+  <mat-card-content>
+    <p>{{question.description}}</p>
+  </mat-card-content>
 
-  </mat-card>
+</mat-card>
 
 <!------------------ANSWERS---------------------------------------------------->
-  <div class="answers">
-    <h3>Answers</h3>
-    <ul class="answers-list" *ngIf="question.answers.length > 0">
-      <li *ngFor="let answer of question.answers">
-        <h5>
-          {{answer.user?.fullname()}}
-          <small>
-            {{answer.createdAt | amTimeAgo}}
-          </small>
-        </h5>
-        <p class="description">
-          {{answer.description}}
-        </p>
-        
-       
-      </li>  
-    </ul>
-    <p *ngIf = "question.answers.length === 0"> Be the first in comment</p>
-    <app-answer [question]="question" class="answer-form"></app-answer>
-  </div>
+<div class="answers">
+  <h3>Answers</h3>
+  <ul class="answers-list" *ngIf="question.answers.length > 0">
+    <li *ngFor="let answer of question.answers">
+      <h5>
+        {{answer.user?.fullname()}}
+        <small>
+          {{answer.createdAt | amTimeAgo}}
+        </small>
+      </h5>
+      <p class="description">
+        {{answer.description}}
+      </p>
 
-  
 
- 
+    </li>
+  </ul>
+  <p *ngIf = "question.answers.length === 0"> Be the first in comment</p>
+  <app-answer [question]="question" class="answer-form"></app-answer>
+</div>
+</div>
+
+
+
+
+

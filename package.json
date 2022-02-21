@@ -22,7 +22,10 @@
     "@angular/platform-browser": "~13.1.0",
     "@angular/platform-browser-dynamic": "~13.1.0",
     "@angular/router": "~13.1.0",
+    "@types/url-join": "^4.0.1",
+    "body-parser": "^1.19.2",
     "concurrently": "^7.0.0",
+    "cors": "^2.8.5",
     "debug": "^4.3.3",
     "express": "^4.17.2",
     "moment": "^2.29.1",
@@ -30,6 +33,7 @@
     "nodemon": "^2.0.15",
     "rxjs": "~7.4.0",
     "tslib": "^2.3.0",
+    "url-join": "^4.0.1",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
