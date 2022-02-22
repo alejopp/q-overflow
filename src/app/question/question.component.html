@@ -26,11 +26,11 @@
 
 <!------------------ANSWERS---------------------------------------------------->
 <div class="answers">
-  <h3>Answers</h3>
+  <h3 id="title"> Answers </h3>
   <ul class="answers-list" *ngIf="question.answers.length > 0">
     <li *ngFor="let answer of question.answers">
       <h5>
-        {{answer.user?.fullname()}}
+        {{answer.user?.firstName}} {{answer.user?.lastName}}
         <small>
           {{answer.createdAt | amTimeAgo}}
         </small>

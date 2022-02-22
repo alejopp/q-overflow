@@ -4,7 +4,7 @@ import { environment } from '../../environments/environment';
 import urljoin from 'url-join';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { map, catchError } from 'rxjs/operators';
+import { Answer } from '../answer/answer.model';
 
 @Injectable()
 export class QuestionService {
@@ -33,6 +33,23 @@ export class QuestionService {
       })
     };
     return this.http.post<Question>(this.questionsUrl, body, httpOptions);
+  }
+
+  addAnswer(answer: Answer): Observable<Answer> {
+    const answerMod = {
+      description: answer.description,
+      question: {
+        _id: answer.question._id
+      }
+    };
+    const body = JSON.stringify(answerMod);
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json',
+      })
+    };
+    const url = urljoin(this.questionsUrl, answer.question._id!.toString(), 'answers');
+    return this.http.post<Answer>(url, body, httpOptions);
   }
 
 
