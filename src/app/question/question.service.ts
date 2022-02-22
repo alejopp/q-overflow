@@ -2,9 +2,9 @@ import { Injectable } from '@angular/core';
 import { Question } from './question.model';
 import { environment } from '../../environments/environment';
 import urljoin from 'url-join';
-
-
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { map, catchError } from 'rxjs/operators';
 
 @Injectable()
 export class QuestionService {
@@ -25,10 +25,21 @@ export class QuestionService {
   }
 
 
+  addQuestion(question: Question): Observable<Question> {
+    const body = JSON.stringify(question);
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json',
+      })
+    };
+    return this.http.post<Question>(this.questionsUrl, body, httpOptions);
+  }
+
+
   handleError(error: any) {
     const errMsg = error.message ? error.message :
       error.status ? `${error.status} - ${error.statusText}` : 'Server error';
-    console.log(errMsg);
+      console.log(errMsg);
   }
 }
 

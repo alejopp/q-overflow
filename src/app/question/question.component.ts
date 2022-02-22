@@ -25,7 +25,7 @@ export class QuestionComponent implements OnInit, OnDestroy {
       getQuestion(params['id'])
       .subscribe( question => {
         this.question = question;
-        this.loading = true;
+        this.loading = false;
       });
     });
   }

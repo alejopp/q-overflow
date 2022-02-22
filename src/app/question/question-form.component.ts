@@ -1,7 +1,9 @@
+import { QuestionService } from './question.service';
 import { Question } from './question.model';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import icons from './icons';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -10,7 +12,8 @@ import icons from './icons';
    styles: [`
     i { font-size: 3rem }
     small{display: block}
-   `]
+   `],
+   providers: [QuestionService]
 })
 export class QuestionFormComponent implements OnInit {
 
@@ -29,7 +32,11 @@ export class QuestionFormComponent implements OnInit {
     }
     return version;
   }
-  constructor() { }
+
+  constructor(
+    private questionService:QuestionService,
+    private router: Router
+    ) { }
 
   ngOnInit(): void {
   }
@@ -41,7 +48,15 @@ export class QuestionFormComponent implements OnInit {
       new Date(),
       form.value.icon
     )
-    console.log(q);
+    console.log(form.value.icon);
+    this.questionService.addQuestion(q)
+    .subscribe(
+      {
+        next: (({_id}) => this.router.navigate(['questions',_id ])),
+        error: (e) => console.log(e),
+        complete: () => console.log('complete')
+      });
+    form.resetForm();
   }
 
 }

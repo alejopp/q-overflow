@@ -1,8 +1,8 @@
 <form (ngSubmit)="onSubmit(f)" #f="ngForm">
     <mat-form-field>
         <mat-label>Title</mat-label>
-        <input 
-            matInput 
+        <input
+            matInput
             placeholder="Title of your question"
             name="title"
             ngModel
@@ -11,8 +11,8 @@
 
     <mat-form-field>
         <mat-label>Description</mat-label>
-        <input 
-            matInput 
+        <input
+            matInput
             name="description"
             ngModel
         >
@@ -27,19 +27,19 @@
                 </mat-radio-button>
             </mat-radio-group>
 
-            
+
             <small>Without icon</small>
-        </mat-grid-tile>   
+        </mat-grid-tile>
 
         <mat-grid-tile *ngFor="let icon of icons">
             <mat-radio-group [ngModel] name="icon" >
-                <mat-radio-button value="devicon-{{ icon.name}}">
-                    <i mat-list-icon class="devicon-{{ icon.name}}-{{getIconVersion(icon)}} colored"> </i>
+                <mat-radio-button value="devicon-{{ icon.name}}-{{ getIconVersion(icon) }} colored">
+                    <i mat-list-icon class="devicon-{{ icon.name }}-{{getIconVersion(icon)}} colored"> </i>
                 </mat-radio-button>
             </mat-radio-group>
 
-            
-        </mat-grid-tile>   
+
+        </mat-grid-tile>
     </mat-grid-list>
 
     <button type="submit" mat-raised-button color="accent">Send</button>
