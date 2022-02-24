@@ -1,6 +1,7 @@
 import express from 'express'
 import bodyParser from 'body-parser'
 import { question } from './routes'
+import { auth } from './routes'
 
 const app = express();
 const cors = require('cors');

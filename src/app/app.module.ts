@@ -12,6 +12,7 @@ import { AnswerComponent } from './answer/answer.component';
 import { SignInScreenComponent } from './auth/signin-screen/signin-screen.component';
 import { Routing } from './app-routing.module';
 import { HttpClientModule} from '@angular/common/http';
+import { AuthService } from './auth/auth.service';
 
 
 
@@ -34,7 +35,7 @@ import { HttpClientModule} from '@angular/common/http';
     Routing,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

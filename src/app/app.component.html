@@ -1,10 +1,27 @@
 <mat-toolbar color="primary">
 
-    <span [routerLink]="'/'">Q-Overflow</span>
-    <span class="space"></span>
-    <span [routerLink]="'/signin'"  class = "material-icons">
+  <span [routerLink]="'/'">Q-Overflow</span>
+  <span class="space"></span>
+
+  <button *ngIf="!isLoggedIn()" [routerLink]="['/signin']" md-icon-button>
+    <span [routerLink]="'/signin'" class = "material-icons">
       account_circle
     </span>
+  </button>
+
+  <div *ngIf="isLoggedIn()">
+    <button mat-button [matMenuTriggerFor]="menu">
+      <span [routerLink]="'/signin'" class = "material-icons">
+        account_circle
+      </span>
+    </button>
+
+    <mat-menu #menu="matMenu" >
+      <button mat-menu-item disabled>{{ fullName() }}</button>
+      <button mat-menu-item (click)="logout()"> Close session</button>
+    </mat-menu>
+  </div>
+
 </mat-toolbar>
 
 <router-outlet></router-outlet>
