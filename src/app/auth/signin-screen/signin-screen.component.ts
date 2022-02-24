@@ -31,7 +31,10 @@ export class SignInScreenComponent implements OnInit {
       const user = new User(email, password);
       this.authService.signin(user)
         .subscribe(
-          this.authService.login,
+          {
+            next: () => this.authService.login,
+            error: (e) => console.log(e)
+          }
         );
     }
   }

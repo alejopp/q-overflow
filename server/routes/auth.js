@@ -22,7 +22,7 @@ const findUserByEmail = e => users.find(({ email }) => email === e)
 function comparePasswords(providedPassword, userPassword) {
   return providedPassword === userPassword
 }
-
+// /api/auth/signin
 app.post('/signin', (req, res, next) => {
   const { email, password } = req.body
   const user = findUserByEmail(email)
@@ -37,7 +37,7 @@ app.post('/signin', (req, res, next) => {
     return handleLoginFailed(res, 'The mail and password don\'t match');
   }
 
-  const token = jwt.sign({ user }, secret, { expiresIn: 86400});
+
   res.status(200).json({
     message: 'Login succeded',
     token,
@@ -48,7 +48,9 @@ app.post('/signin', (req, res, next) => {
   })
 
 })
+
 const createToken = (user) => jwt.sign({ user }, secret, { expiresIn: 86400 });
+
 // /api/auth/signup
 app.post('/signup', (req, res) => {
   const { firstName, lastName, email, password } = req.body
@@ -70,6 +72,13 @@ app.post('/signup', (req, res) => {
     lastName,
     email
   })
+})
+
+app.get('/',(req, res) => {
+  res.status(200).json({
+    message: 'ok',
+    users: users
+  });
 })
 
 function handleLoginFailed(res, message) {

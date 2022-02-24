@@ -37,6 +37,21 @@ export class AuthService {
 
   }
 
+  signUp(user: User) {
+    const body = JSON.stringify(user);
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+
+    return this.http.post(this.usersUrl + '/signup', body, { headers }).pipe(
+        map(
+            (res) => this.login(res)
+        ),
+        catchError(
+            error => throwError(error)
+        )
+    );
+
+}
+
   login(params: any) {
     const { token, userId, firstName, lastName, email } = params;
     localStorage.setItem('token', token);
