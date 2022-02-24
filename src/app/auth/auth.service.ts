@@ -19,6 +19,8 @@ export class AuthService {
     }
   }
 
+
+
   signin(user: User): Observable<any> {
     const body = JSON.stringify(user);
     const headers = new HttpHeaders({ 'Content-Type': 'application/json'});
@@ -32,7 +34,7 @@ export class AuthService {
               return throwError(() => {
                 new Error(error.toString());
               });
-            }),
+            })
         );
 
   }
@@ -42,22 +44,33 @@ export class AuthService {
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
 
     return this.http.post(this.usersUrl + '/signup', body, { headers }).pipe(
-        map(
-            (res) => this.login(res)
-        ),
-        catchError(
-            error => throwError(error)
-        )
+      map( (res: any) => {
+        this.login(res);
+        return res;
+      }),
+      catchError((error: Response) => {
+        return throwError(() => {
+          new Error(error.toString());
+      });
+    })
     );
 
 }
 
-  login(params: any) {
-    const { token, userId, firstName, lastName, email } = params;
+// login(params: any) {
+//   const { token, userId, firstName, lastName, email } = params;
+//   localStorage.setItem('token', token);
+//   localStorage.setItem('user', JSON.stringify({ userId, firstName, lastName, email }));
+//   this.router.navigateByUrl('/');
+// }
+
+  login = ({ token, userId, firstName, lastName, email }:
+    {token:string, userId:string, firstName:string, lastName:string, email:string}) => {
+    this.currentUser = new User(email, '', firstName, lastName, userId);
     localStorage.setItem('token', token);
-    localStorage.setItem('user', JSON.stringify({ userId, firstName, lastName, email }));
+    localStorage.setItem('user', JSON.stringify({ email, firstName, lastName, userId }));
     this.router.navigateByUrl('/');
-}
+  }
 
   isLoggedIn() {
     return localStorage.getItem('token') !== null;

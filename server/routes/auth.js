@@ -37,6 +37,7 @@ app.post('/signin', (req, res, next) => {
     return handleLoginFailed(res, 'The mail and password don\'t match');
   }
 
+  const token = jwt.sign({ user }, secret, { expiresIn: 86400});
 
   res.status(200).json({
     message: 'Login succeded',

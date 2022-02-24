@@ -32,7 +32,7 @@ export class SignUpScreenComponent implements OnInit{
     onSubmit(){
         if (this.signUpForm.valid) {
             const { name, lastname, email, password } = this.signUpForm.value;
-            const user = new User(name, lastname, email, password);
+            const user = new User(email, password, name, lastname);
             this.authService.signUp(user)
               .subscribe(
                 {

@@ -16,7 +16,7 @@ export class AppComponent {
   }
 
   fullName() {
-    return this.authService.currentUser?.fullname();
+    return this.authService.currentUser?.fullName();
   }
 
   logout() {

@@ -11,13 +11,13 @@
 
   <div *ngIf="isLoggedIn()">
     <button mat-button [matMenuTriggerFor]="menu">
-      <span [routerLink]="'/signin'" class = "material-icons">
+      <span class = "material-icons">
         account_circle
       </span>
     </button>
 
     <mat-menu #menu="matMenu" >
-      <button mat-menu-item disabled>{{ fullName() }}</button>
+      <button mat-menu-item disabled> {{ fullName() }} </button>
       <button mat-menu-item (click)="logout()"> Close session</button>
     </mat-menu>
   </div>

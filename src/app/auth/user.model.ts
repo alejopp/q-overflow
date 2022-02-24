@@ -8,7 +8,7 @@ export class User{
         public _id?: string,
 ){ }
 
-    fullname(){
+    fullName(){
         return `${this.firstName} ${this.lastName}`
     }
 }
