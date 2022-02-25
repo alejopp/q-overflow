@@ -33,7 +33,7 @@ export class SignInScreenComponent implements OnInit {
         .subscribe(
           {
             next: () => this.authService.login,
-            error: (e) => console.log(e)
+            error: () => this.authService.handleError
           }
         );
     }

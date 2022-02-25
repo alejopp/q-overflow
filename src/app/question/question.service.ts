@@ -24,6 +24,10 @@ export class QuestionService {
     return this.http.get<Question>(url);
   }
 
+  getToken() {
+    const token = localStorage.getItem('token');
+    return `?token=${token}`;
+  }
 
   addQuestion(question: Question): Observable<Question> {
     const body = JSON.stringify(question);
@@ -32,7 +36,8 @@ export class QuestionService {
         'Content-Type':  'application/json',
       })
     };
-    return this.http.post<Question>(this.questionsUrl, body, httpOptions);
+    const token = this.getToken();
+    return this.http.post<Question>(this.questionsUrl + token, body, httpOptions);
   }
 
   addAnswer(answer: Answer): Observable<Answer> {
@@ -48,8 +53,9 @@ export class QuestionService {
         'Content-Type':  'application/json',
       })
     };
+    const token = this.getToken();
     const url = urljoin(this.questionsUrl, answer.question._id!.toString(), 'answers');
-    return this.http.post<Answer>(url, body, httpOptions);
+    return this.http.post<Answer>(url + token, body, httpOptions);
   }
 
 

@@ -1,3 +1,4 @@
+import { AuthService } from './../auth/auth.service';
 import { QuestionService } from './question.service';
 import { Question } from './question.model';
 import { Component, OnInit } from '@angular/core';
@@ -35,10 +36,14 @@ export class QuestionFormComponent implements OnInit {
 
   constructor(
     private questionService:QuestionService,
+    private authService: AuthService,
     private router: Router
     ) { }
 
   ngOnInit(): void {
+    if (!this.authService.isLoggedIn()) {
+      this.router.navigateByUrl('/signin');
+    }
   }
 
   onSubmit(form: NgForm){
@@ -53,7 +58,7 @@ export class QuestionFormComponent implements OnInit {
     .subscribe(
       {
         next: (({_id}) => this.router.navigate(['questions',_id ])),
-        error: (e) => console.log(e),
+        error: (e) => this.authService.handleError(e),
         complete: () => console.log('complete')
       });
     form.resetForm();

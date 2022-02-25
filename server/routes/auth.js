@@ -1,23 +1,11 @@
 import express from 'express'
 import Debug from 'debug'
 import jwt from 'jsonwebtoken'
+import { secret } from '../config'
+import { users, findUserByEmail } from '../middleware'
 
 const app = express.Router()
 const debug = new Debug('platzi-overflow:auth')
-
-const secret = 'mysecretpassword';
-
-const users = [
-  {
-    firstName: 'Son',
-    lastName: 'Goku',
-    email: 'goku@toei.com',
-    password: '123456',
-    _id: 123
-  }
-]
-
-const findUserByEmail = e => users.find(({ email }) => email === e)
 
 function comparePasswords(providedPassword, userPassword) {
   return providedPassword === userPassword
@@ -37,7 +25,7 @@ app.post('/signin', (req, res, next) => {
     return handleLoginFailed(res, 'The mail and password don\'t match');
   }
 
-  const token = jwt.sign({ user }, secret, { expiresIn: 86400});
+  const token = jwt.sign({ user }, secret, { expiresIn: 15 });
 
   res.status(200).json({
     message: 'Login succeded',
@@ -50,7 +38,7 @@ app.post('/signin', (req, res, next) => {
 
 })
 
-const createToken = (user) => jwt.sign({ user }, secret, { expiresIn: 86400 });
+const createToken = (user) => jwt.sign({ user }, secret, { expiresIn: 15 });
 
 // /api/auth/signup
 app.post('/signup', (req, res) => {
