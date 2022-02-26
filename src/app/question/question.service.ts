@@ -15,8 +15,8 @@ export class QuestionService {
     this.questionsUrl = urljoin(environment.apiUrl, 'questions');
   }
 
-  getQuestions() {
-    return this.http.get<Question[]>(this.questionsUrl);
+  getQuestions(sort = '-createdAt') {
+    return this.http.get<Question[]>(`${this.questionsUrl}?sort=${sort}`);
   }
 
   getQuestion(id:string){

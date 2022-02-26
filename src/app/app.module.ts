@@ -1,3 +1,4 @@
+import { QuestionScreenComponent } from './question/question-screen.component';
 import { QuestionListComponent } from './question/question-list.component';
 import { QuestionFormComponent } from './question/question-form.component';
 import { SignUpScreenComponent } from './auth/signup-screen/signup-screen.component';
@@ -24,7 +25,8 @@ import { AuthService } from './auth/auth.service';
     SignInScreenComponent,
     SignUpScreenComponent,
     QuestionFormComponent,
-    QuestionListComponent
+    QuestionListComponent,
+    QuestionScreenComponent
   ],
   imports: [
     BrowserModule,
