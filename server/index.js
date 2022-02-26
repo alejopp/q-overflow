@@ -8,8 +8,12 @@ const debug = new Debug('q-overflow:root');
 
 async function start() {
   await mongoose.connect(mongoUrl, {
-                  useNewUrlParser: true
-          });
+            useNewUrlParser: true,
+            useUnifiedTopology: true
+          })
+          .then(db => console.log('DB is connected'))
+          .catch(err => console.log(err)
+    );
 
   app.listen(PORT, () => {
           debug(`Server running at PORT ${PORT}.`);

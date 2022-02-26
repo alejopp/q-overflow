@@ -36,6 +36,7 @@ export class AuthService {
             }),
             catchError((error: Response) => {
               return throwError(() => {
+                console.log(error);
                 new Error(error.toString());
               });
             })
@@ -54,6 +55,7 @@ export class AuthService {
       }),
       catchError((error: Response) => {
         return throwError(() => {
+          console.log(error);
           new Error(error.toString());
       });
     })
