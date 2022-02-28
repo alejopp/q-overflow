@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # QOverflow
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.2.
@@ -25,3 +26,7 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+=======
+# q-overflow
+This is a web page to make questions and answers concerning to different programming languages. It's purpose is similar to Stack Overflow.
+>>>>>>> b6598f01a6f8b21e9bbe544357a600b26b1edc5e
