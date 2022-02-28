@@ -29,4 +29,21 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 =======
 # q-overflow
 This is a web page to make questions and answers concerning to different programming languages. It's purpose is similar to Stack Overflow.
+<<<<<<< HEAD
 >>>>>>> b6598f01a6f8b21e9bbe544357a600b26b1edc5e
+=======
+
+## How does it work? 🚀
+
+
+
+## Built with 🛠️
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" />
+
+
+## Preview
+![preview](/preview.png)
+
+## Demo
+Under construction..
+>>>>>>> 5206e6a1875f40e016492f83e7ec95dbb48cb4fa
