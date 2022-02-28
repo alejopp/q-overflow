@@ -1,49 +1,38 @@
-<<<<<<< HEAD
-# QOverflow
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.2.
 
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-=======
-# q-overflow
+# Q-overflow
 This is a web page to make questions and answers concerning to different programming languages. It's purpose is similar to Stack Overflow.
-<<<<<<< HEAD
->>>>>>> b6598f01a6f8b21e9bbe544357a600b26b1edc5e
-=======
 
-## How does it work? 🚀
 
+## Description 🚀
+In the main page all the question posted by all users are shown either by date or by number of answers (descending). You can take an insight of all questions without the need to be logged in.
+
+To post a question or answer an existing one you must first sign in. If you are not registered you have the option to sign up with your email address.
+
+To add a question click on the + button from the main page (remember to be loggd in). It will open the interface to create a new question. Here you only must give a title to your question, a description and finally and icon ( if it's possible) and press send button.
 
 
 ## Built with 🛠️
-<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" />
+
+<img src="https://img.icons8.com/color/48/000000/angularjs.png"/>
+<img src="https://img.icons8.com/external-tal-revivo-shadow-tal-revivo/48/000000/external-mongodb-a-cross-platform-document-oriented-database-program-logo-shadow-tal-revivo.png"/>
+<img src="https://img.icons8.com/color/48/000000/nodejs.png"/>
 
 
 ## Preview
-![preview](/preview.png)
+**Main page**
+![main_page](/src/assets/images/main_page.png)
+
+**Question example**
+![question example](/src/assets/images/question_example.png)
+
+**Sign in**
+![sign in](/src/assets/images/sign_in.png)
+
+**Sign up**
+![sign up](/src/assets/images/sign_up.png)
+
 
 ## Demo
-Under construction..
->>>>>>> 5206e6a1875f40e016492f83e7ec95dbb48cb4fa
+Under construction.
+
